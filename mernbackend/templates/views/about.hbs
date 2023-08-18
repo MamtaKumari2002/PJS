@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products-PJS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    {{!-- {{navbar}} --}}
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="/">
+            <img src="images//pjs_Logo.png" width="125px"
+          /></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="/">Home</a></li>
+            <li><a href="/product">Products</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/account">Account</a></li>
+          </ul>
+        </nav>
+        <a href="/cart">
+          <img src="images//cart.png" width="30px" height="30px"
+        /></a>
+        <img
+          src="images//menuicon.jpg"
+          class="menu-icon"
+          onclick="menutoggle()"
+        />
+      </div>
+    </div>
+
+    <!--------about-page----->
+
+ <div class="about-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Welcome to Prabhu Jee Sweets, your one-stop destination for delectable sweets and mouthwatering treats. With a legacy of excellence spanning decades, we take pride in crafting exquisite sweets that delight your taste buds and warm your heart.</p>
+      <p>Our journey began with a humble kitchen and a vision to spread happiness through our delectable creations. Over the years, we have grown into a beloved sweets brand that stands for quality, tradition, and innovation.</p>
+      <p>At Prabhu Jee Sweets, we believe in using the finest ingredients and time-honored recipes to create sweets that capture the essence of Indian culture and cuisine. Each bite tells a story of tradition, love, and devotion.</p>
+      <p>Our dedicated team of expert chefs and confectioners work tirelessly to bring you a diverse range of sweets that cater to every palate. From classic favorites to modern twists, we have something for everyone.</p>
+    </div>
+  </div>
+
+  <div class="mission-section">
+    <div class="container">
+      <h2>Our Mission</h2>
+      <p>Our mission is to create moments of joy and celebration by offering the finest quality sweets that symbolize the rich heritage of Indian cuisine. We are committed to delivering unmatched taste, freshness, and customer satisfaction.</p>
+      <p>With every sweet we create, we strive to preserve the essence of traditional recipes while embracing innovation. Our mission is to make every occasion memorable and every bite a delightful experience.</p>
+    </div>
+  </div>
+
+  <!-------This is History section of the page--->
+  <div class="history-section">
+  <div class="container">
+    <h2>Our History</h2>
+    <p>Since our inception in 1975, Prabhu Jee Sweets has been dedicated to crafting delicious and memorable sweets for our valued customers. Over the decades, we have become a symbol of quality, tradition, and innovation in the world of confectionery.</p>
+    <p>From our humble beginnings in a small kitchen, we have grown into a beloved sweets brand that stands tall with a legacy of excellence. Our commitment to using the finest ingredients and authentic recipes has remained unchanged, ensuring that every bite captures the essence of Indian culture and cuisine.</p>
+    <p>Today, our sweets continue to spread joy and celebration, making every occasion special. We are proud to be a part of your celebrations and look forward to serving you for generations to come.</p>
+  </div>
+</div>
+
+
+  <!-- Add your other sections, such as team, values, etc., as needed -->
+
+  {{!-- {{>footer}} --}}
+
+    <!-------footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="images//googleplay.jpg" />
+              <img src="images//appstore.jpg" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images//pjs_Logo.png" />
+            <p>
+              Our Purpose is To Sustainably Make the Pleasure and Benefits of
+              Sports Accessible to the Many.
+            </p>
+          </div>
+
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+
+          {{!-- <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>YouTube</li>
+            </ul>
+          </div> --}}
+          {{!-- <h3>Follow Us</h3>
+  <ul>
+    <li><a href="https://www.facebook.com/profile.php?id=61550231367076">Facebook</a></li>
+    <li><a href="https://twitter.com/Mamta7806288141">Twitter</a></li>
+    <li><a href="https://www.instagram.com/mamtakumari8610/">Instagram</a></li>
+    <li><a href="https://www.youtube.com/@mamtakumarijaiswal7625">YouTube</a></li>
+  </ul>
+</div> --}}
+        <div class="footer-col-4">
+          <h3>Follow Us</h3>
+             <ul>
+              <li><a href="https://www.facebook.com/profile.php?id=61550231367076">Facebook</a></li>
+              <li><a href="https://twitter.com/Mamta7806288141">Twitter</a></li>
+              <li><a href="https://www.instagram.com/mamtakumari8610/">Instagram</a></li>
+             <li><a href="https://www.youtube.com/@mamtakumarijaiswal7625">YouTube</a></li>
+           </ul>
+        </div>
+
+        </div>
+        <hr />
+        <p class="copyright">Copyright 2023 - Self Creation</p>
+      </div>
+    </div>
+
+    <!--------js for toggle menu----->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+    <!-- --------js for toggle form----- -->
+    <script>
+      var LoginForm = document.getElementById("LoginForm");
+      var RegForm = document.getElementById("RegForm");
+      var Indicator = document.getElementById("Indicator");
+
+      function register() {
+        RegForm.style.transform = "translateX(0px)";
+        LoginForm.style.transform = "translateX(0px)";
+        Indicator.style.transform = "translateX(100px)";
+      }
+      function login() {
+        RegForm.style.transform = "translateX(300px)";
+        LoginForm.style.transform = "translateX(300px)";
+        Indicator.style.transform = "translateX(0px)";
+      }
+    </script>
+  </body>
+</html>

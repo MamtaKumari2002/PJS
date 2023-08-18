@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products-PJS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="images//pjs_Logo.png" width="125px" />
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="/">Home</a></li>
+            <li><a href="/product">Products</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/account">Account</a></li>
+          </ul>
+        </nav>
+        <a href="/cart">
+        <img src="images//cart.png" width="30px" height="30px" /></a>
+        <img
+          src="images//menuicon.jpg"
+          class="menu-icon"
+          onclick="menutoggle()"
+        />
+      </div>
+    </div>
+
+    <!-- cart items details -->
+
+    {{!-- <!In my html template-----> --}}
+    {{!-- <div id="cart-container"></div> --}}
+    <div class="small-container cart page">
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+                <img src="images//sweet.jpg" >
+                <div>
+                    <p>PJS Specail Sweet</p>
+                    {{!-- <small>Price: &#x20B9 260.00/kg</small> --}}
+                    <small>Price: 260.00/kg</small>
+                    <br>
+                    {{!-- <a href="">Remove</a> --}}
+                    <a href="#" onclick="removeFromCart(event)">Remove</a>
+                </div>
+            </div>
+          </td>
+          <td><input type="number" value="1" /></td>
+          {{!-- <td> &#x20B9 260.00/kg</td> --}}
+           <td> 260.00/kg</td>
+        </tr>
+        <tr>
+            <td>
+              <div class="cart-info">
+                  <img src="images//gulabjamun.jpg" >
+                  <div>
+                      <p>PJS Gulab Jamun Sweet</p>
+                      {{!-- <small>Price:  &#x20B9 260.00/kg</small> --}}
+                      <small>Price: 260.00/kg</small>
+                      <br>
+                      {{!-- <a href="">Remove</a> --}}
+                       <a href="#" onclick="removeFromCart(event)">Remove</a>
+                  </div>
+              </div>
+            </td>
+            <td><input type="number" value="1" /></td>
+            {{!-- <td>  &#x20B9 260.00/kg</td> --}}
+             <td> 260.00/kg</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="cart-info">
+                  <img src="images//sponge.jpg" >
+                  <div>
+                      <p>PJS Sponge</p>
+                      <small>Price: 280.00/kg</small>
+                      {{!-- <small>Price:  &#x20B9 280.00/kg</small> --}}
+                      <br>
+                      {{!-- <a href="">Remove</a> --}}
+                       <a href="#" onclick="removeFromCart(event)">Remove</a>
+                  </div>
+              </div>
+            </td>
+            <td><input type="number" value="1" /></td>
+            {{!-- <td>  &#x20B9 260.00/kg</td> --}}
+             <td> 260.00/kg</td>
+          </tr>
+           <tr>
+            <td>
+              <div class="cart-info">
+                  <img src="images//dalbut.jpg" >
+                  <div>
+                      <p>PJS Dalbut</p>
+                      {{!-- <small>Price:  &#x20B9 260.00/kg</small> --}}
+                      <small>Price: 200.00/kg</small>
+                      <br>
+                      {{!-- <a href="">Remove</a> --}}
+                       <a href="#" onclick="removeFromCart(event)">Remove</a>
+                  </div>
+              </div>
+            </td>
+            <td><input type="number" value="1" /></td>
+            {{!-- <td>  &#x20B9 260.00/kg</td> --}}
+             <td> 200.00/kg</td>
+          </tr>
+           <tr>
+            <td>
+              <div class="cart-info">
+                  <img src="images//ghee.jpg" >
+                  <div>
+                      <p>PJS Ghee</p>
+                      {{!-- <small>Price:  &#x20B9 260.00/kg</small> --}}
+                      <small>Price: 600.00/kg</small>
+                      <br>
+                      {{!-- <a href="">Remove</a> --}}
+                       <a href="#" onclick="removeFromCart(event)">Remove</a>
+                  </div>
+              </div>
+            </td>
+            <td><input type="number" value="1" /></td>
+            {{!-- <td>  &#x20B9 260.00/kg</td> --}}
+             <td> 600.00/kg</td>
+          </tr>
+           <tr>
+            <td>
+              <div class="cart-info">
+                  <img src="images//pera.jpg" >
+                  <div>
+                      <p>PJS Special Pera</p>
+                      {{!-- <small>Price:  &#x20B9 260.00/kg</small> --}}
+                      <small>Price: 200.00/kg</small>
+                      <br>
+                      {{!-- <a href="">Remove</a> --}}
+                       <a href="#" onclick="removeFromCart(event)">Remove</a>
+                  </div>
+              </div>
+            </td>
+            <td><input type="number" value="1" /></td>
+            {{!-- <td>  &#x20B9 260.00/kg</td> --}}
+             <td> 200.00/kg</td>
+          </tr>
+           <tr>
+            <td>
+              <div class="cart-info">
+                  <img src="images//khurma.jpg" >
+                  <div>
+                      <p>PJS Khurma</p>
+                      {{!-- <small>Price:  &#x20B9 260.00/kg</small> --}}
+                      <small>Price: 120.00/kg</small>
+                      <br>
+                      {{!-- <a href="">Remove</a> --}}
+                       <a href="#" onclick="removeFromCart(event)">Remove</a>
+                  </div>
+              </div>
+            </td>
+            <td><input type="number" value="1" /></td>
+            {{!-- <td>  &#x20B9 260.00/kg</td> --}}
+             <td> 120.00/kg</td>
+          </tr>
+      </table>
+<div class="total-price">
+    <table>
+        <tr>
+            <td> Subtotal</td>
+            {{!-- <td> &#x20B9 260.00</td> --}}
+            {{!-- <td id="subtotal"> &#x20B9 0.00</td> --}}
+             <td id="subtotal">  0.00</td>
+        </tr>
+        <tr>
+            <td>Tax</td>
+            {{!-- <td> &#x20B9 10.00</td> --}}
+             <td>10.00</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            {{!-- <td>&#x20B9 270.00</td> --}}
+            <td id="total">0.00</td>
+            {{!-- <td id="total">&#x20B9 0.00</td> --}}
+        </tr>
+    </table>
+</div>
+
+</div>
+
+    <!-------footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="images//googleplay.jpg" />
+              <img src="images//appstore.jpg" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images//pjs_Logo.png" />
+            <p>
+              Our Purpose is To Sustainably Make the Pleasure and Benefits of
+              Sports Accessible to the Many.
+            </p>
+          </div>
+
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+
+          {{!-- <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>YouTube</li>
+            </ul>
+          </div> --}}
+          <div class="footer-col-4">
+          <h3>Follow Us</h3>
+             <ul>
+              <li><a href="https://www.facebook.com/profile.php?id=61550231367076">Facebook</a></li>
+              <li><a href="https://twitter.com/Mamta7806288141">Twitter</a></li>
+              <li><a href="https://www.instagram.com/mamtakumari8610/">Instagram</a></li>
+             <li><a href="https://www.youtube.com/@mamtakumarijaiswal7625">YouTube</a></li>
+           </ul>
+        </div>
+
+        </div>
+        <hr />
+        <p class="copyright">Copyright 2023 - Self Creation</p>
+      </div>
+    </div>
+
+    <!--------js for toggle menu----->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+    <!---i am writing to adding according to weight and price -->
+    {{!-- <script src="/path-to-react/umd/react.development.js"></script>
+    <script src="/path-to-react-dom/umd/react-dom.development.js"></script>
+    <script>
+      const cartItems = [
+       {
+    id:1,
+    name: 'PJS Special Sweet',
+    image: 'images/sweet.jpg',
+    price: 260,
+    quantity:1,
+  },
+  {
+    id:2,
+    name:'PJS Gulabjamun',
+    image:'images/gulabjamun.jpg',
+    price:260,
+    quantity:1,
+  },
+  {
+    id:3,
+    name:'PJS Sponge',
+    image:'images/sponge.jpg',
+    price:280,
+    quantity:1,
+  },
+  {
+    id:4,
+    name:'PJS Khurma',
+    image:'images/khurma.jpg',
+    price:120,
+    quantity:1,
+  },
+  {
+    id:5,
+    name:'PJS Dalbut',
+    image:'images/dalbut.jpg',
+    price:200,
+    quantity:1,
+  },
+  {
+    id:6,
+    name:'PJS Special Pera',
+    image:'images/pera.jpg',
+    price:200,
+    quantity:1,
+  },
+  {
+    id:7,
+    name:'PJS Ghee',
+    image:'images/ghee.jpg',
+    price:600,
+    quantity:1,
+  },
+  ];
+
+  ReactDOM.render(
+    React.createElement(Cart, { cartItems }),
+    document.getElementById('cart-container')
+  );
+    </script> --}}
+
+    <!---JavaScript cde to update cart dynamically-->
+    <script>
+
+      //Attach event listeners to "Remove" links
+      const removeLinks = document.querySelectorAll(".cart-info a");
+      removeLinks.forEach((link) => {
+        link.addEventListener("click", removeFromCart);
+      });
+
+      //Function to remove an item from the cart
+      {{!-- function removeFromCart(event) {
+        const row = event.target.closest("tr") // get the parent row of the clicked link
+        row.remove(); //Remove the row from the table
+        updateCart(); // Update the cart totals
+      } --}}
+      function removeFromCart(event) {
+        event.preventDefault();//Prevent the default behavior of the anchor tag
+        const row = event.target.closest("tr");//get the parent row of the clicked link
+        row.remove(); //Remove the row from the table
+        updateCart(); //Update the cart totals
+      }
+      //Get the cart table and total elements
+      const cartTable = document.querySelector(".small-container.cart.page table");
+      const subtotalElement = document.getElementById("subtotal");
+      const totalElement = document.getElementById("total");
+
+      // Function to update prices, subtotals, and totals
+      function updateCart(){
+        let subtotal = 0;
+        //Loop through each row in the cart table
+        const rows = cartTable.getElementsByTagName("tr");
+        for(let i = 1; i<rows.length;i++){//Start from 1 to skip the header row
+        const row = rows[i];
+        const quantityInput = row.querySelector("input[type='number']");
+        const priceElement = row.querySelector(".cart-info small");
+        /*const subtotalCell = row.querySelector("td:last-child");*/
+        const subtotalCell = row.querySelector("td:last-child");
+console.log(subtotalCell); // Add this line for debugging
+
+
+        //Get the price and quantity values
+       /* const price = parseFloat(priceElement.innerText.replace("Price: &#x20B9", ""));*/
+       /*const price = parseFloat(priceElement.innerText.replace("Price: ", "").replace("&#x20B9", "").trim());*/
+       {{!-- const priceText = priceElement.innerText.replace("Price: ", "").replace("&#x20B9", "").trim();
+const price = parseFloat(priceText); --}}
+const priceText = priceElement.innerText.replace("Price: ", "").replace("", "").trim();
+const price = parseFloat(priceText);
+console.log(priceText, price); // Add this line for debugging
+
+
+        const quantity = parseInt(quantityInput.value);
+
+        //Update the subtotal for this row
+        const rowSubtotal = price * quantity;
+        subtotal += rowSubtotal;
+        //subtotalCell.innerHTML = `&#x20B9 ${rowSubtotal.toFixed(2)}`;
+        subtotalCell.innerHTML = ` ${rowSubtotal.toFixed(2)}`;
+
+        }
+
+        //Update the subtotal and total elements
+        //subtotalElement.innerText = `&#x20B9 ${subtotal.toFixed(2)}`;
+        subtotalElement.innerText = `${subtotal.toFixed(2)}`;
+       // totalElement.innerText = `&#x20B9 ${(subtotal+10).toFixed(2)}`;
+        totalElement.innerText = `${(subtotal+10).toFixed(2)}`;
+      }
+
+
+      // Attach the updateCart function to quantity input change event
+
+      const quantityInputs = document.querySelectorAll("input[type='number']");
+      quantityInputs.forEach((input) => {
+        input.addEventListener("input", updateCart);
+      });
+
+      //Initial update when the page loads
+      updateCart();
+
+       
+    </script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products-PJS</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="/">
+            <img src="images//pjs_Logo.png" width="125px"
+          /></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="/">Home</a></li>
+            <li><a href="/product">Products</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/account">Account</a></li>
+          </ul>
+        </nav>
+        <a href="/cart">
+          <img src="images//cart.png" width="30px" height="30px"
+        /></a>
+        <img
+          src="images//menuicon.jpg"
+          class="menu-icon"
+          onclick="menutoggle()"
+        />
+      </div>
+    </div>
+
+    <!---------contact.html page------>
+<!-- Add this code after your existing HTML content -->
+
+<!---------contact--------->
+<div class="contact">
+  <div class="small-container">
+    <h2 class="title">Contact Us</h2>
+    <!---Check if the form has been submitted and display the thank you message --->
+    {{#if contact.submitted}}
+    <div class="thank-you-message">
+      <h3>Thank you for contacting us!</h3>
+      <p>We appreciate your inquiry. Our team will get back to you soon.</p>
+    </div>
+    {{!-- <p class="thank-you-message">{{contact.thankYouMessage}}</p> --}}
+    {{else}}
+    
+    <div class="row">
+      <div class="col-2">
+        <h3>Get in Touch</h3>
+        <p>If you have any questions or inquiries, feel free to contact us. We'd love to hear from you!</p>
+        <div class="contact-info">
+          <i class="fa fa-map-marker"></i>
+          <span>Hiramani, Motihari PIN 845302, India</span>
+           <!-------Adjust the positioning of the Google Map -->
+        <div class="contact-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.875965649988!2d85.00934699999999!3d26.843897100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ecb53a5ae13945%3A0x1ef35789543d85ca!2sHiramani!5e0!3m2!1sen!2sin!4v1691865116530!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+           
+        </div>
+       
+        <div class="contact-info">
+          <i class="fa fa-envelope"></i>
+          <span>prabhu300080@gmail.com</span>
+        </div>
+        <div class="contact-info">
+          <i class="fa fa-phone"></i>
+          <span>+91 9771154497</span>
+          <span>+91 9661989709</span>
+          <span>+91 9631575590</span>
+        </div>
+       
+      </div>
+      <div class="col-2">
+        <form id="contact-form" action="contact" method="post">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="massage" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</div>
+
+
+
+    <!-------footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="images//googleplay.jpg" />
+              <img src="images//appstore.jpg" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images//pjs_Logo.png" />
+            <p>
+              Our Purpose is To Sustainably Make the Pleasure and Benefits of
+              Sports Accessible to the Many.
+            </p>
+          </div>
+
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+
+          {{!-- <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>YouTube</li>
+            </ul>
+          </div> --}}
+         <div class="footer-col-4">
+          <h3>Follow Us</h3>
+             <ul>
+              <li><a href="https://www.facebook.com/profile.php?id=61550231367076">Facebook</a></li>
+              <li><a href="https://twitter.com/Mamta7806288141">Twitter</a></li>
+              <li><a href="https://www.instagram.com/mamtakumari8610/">Instagram</a></li>
+             <li><a href="https://www.youtube.com/@mamtakumarijaiswal7625">YouTube</a></li>
+           </ul>
+        </div>
+
+        </div>
+        <hr />
+        <p class="copyright">Copyright 2023 - Self Creation</p>
+      </div>
+    </div>
+
+    <!--------js for toggle menu----->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+    <!-- --------js for toggle form----- -->
+    <script>
+      var LoginForm = document.getElementById("LoginForm");
+      var RegForm = document.getElementById("RegForm");
+      var Indicator = document.getElementById("Indicator");
+
+      function register() {
+        RegForm.style.transform = "translateX(0px)";
+        LoginForm.style.transform = "translateX(0px)";
+        Indicator.style.transform = "translateX(100px)";
+      }
+      function login() {
+        RegForm.style.transform = "translateX(300px)";
+        LoginForm.style.transform = "translateX(300px)";
+        Indicator.style.transform = "translateX(0px)";
+      }
+    </script>
+  </body>
+</html>
