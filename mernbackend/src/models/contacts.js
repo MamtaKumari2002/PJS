@@ -11,6 +11,15 @@ const contactSchema = new mongoose.Schema({
         unique:true
 
     },
+    phone:{
+        type: String,
+        required: true,
+        unique:true
+    },
+    address:{
+        type: String,
+        required: true
+    },
     massage:{
        type:String,
         required:true

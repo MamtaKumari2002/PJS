@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 //    // useCreateIndex:true
 // });
 
-// -----------login-------
+// -----------login-------a
 
 mongoose.connect("mongodb://localhost:27017/customerRegistration", {
     useNewUrlParser:true,

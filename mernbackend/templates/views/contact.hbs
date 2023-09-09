@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" initial-scale="1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Products-PJS</title>
+    {{!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> --}}
+    <title>Contact-PJS</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -68,7 +68,7 @@
         <p>If you have any questions or inquiries, feel free to contact us. We'd love to hear from you!</p>
         <div class="contact-info">
           <i class="fa fa-map-marker"></i>
-          <span>Hiramani, Motihari PIN 845302, India</span>
+          <span>Near Hiramani Bazar and Schhol Chauk(opposite Side of Madharsha) Motihari PIN 845302, India</span>
            <!-------Adjust the positioning of the Google Map -->
         <div class="contact-map">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.875965649988!2d85.00934699999999!3d26.843897100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ecb53a5ae13945%3A0x1ef35789543d85ca!2sHiramani!5e0!3m2!1sen!2sin!4v1691865116530!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -82,9 +82,9 @@
         </div>
         <div class="contact-info">
           <i class="fa fa-phone"></i>
-          <span>+91 9771154497</span>
-          <span>+91 9661989709</span>
-          <span>+91 9631575590</span>
+          <span>+91 9771154497 </span>
+          <span>+91 9798604836</span>
+         <!-- <span>+91 9631575590</span>-->
         </div>
        
       </div>
@@ -92,6 +92,8 @@
         <form id="contact-form" action="contact" method="post">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder=" Your Phone Number" required>
+          <textarea  name="address" placeholder="Your Address" required></textarea>
           <textarea name="massage" placeholder="Your Message" required></textarea>
           <button type="submit" class="btn">Send Message</button>
         </form>

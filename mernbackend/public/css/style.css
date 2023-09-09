@@ -401,6 +401,30 @@ td:last-child{
 th:last-child{
     text-align: right;
 }
+
+/*------"proceed to payment" buttonand container*/
+.proceed-to-payment {
+    display: flex;
+    justify-content: flex-end;
+    /*margin-top: 20px;/* Adjust margin if needed 
+    /*background-color:cyan ; */
+
+}
+/*
+#proceedBtn{
+    background-color: rgb(26, 233, 233);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#proceedBtn:hover {
+    background-color: #ff523b;
+}
+*/
 /* ---------account-page---- */
 .account-page{
     padding: 50px 0;
@@ -547,6 +571,10 @@ form a{
     font-size: 16px;
     color: #666;
 }
+
+
+
+
 
 
 

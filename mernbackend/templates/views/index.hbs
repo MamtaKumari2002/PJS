@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" initial-scale="1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!--- <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
     <title>PJS</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,7 +44,8 @@
               The more you celebrrate your life the more there is in life to
               celebrate.
             </p>
-            <a href="" class="btn">Explore Now &#10132;</a>
+            <a href="/product" id="explore-link" class="btn">Explore Now &#10132;</a>
+            {{!-- <a href="/product"  class="btn">Explore Now &#10132;</a> --}}
           </div>
           <div class="col-2">
             <img src="images//sweet.jpg" />
@@ -197,7 +198,7 @@
             <p>Exclusively Available on PJS</p>
             <h1>Gulab Jamun</h1>
             <small>Mithas Ka Bandhan-Happy RakshaBandhan.</small>
-            <a href="" class="btn">Buy Now &#8594;</a>
+            <a href="/cart.html" class="btn">Buy Now &#8594;</a>
           </div>
         </div>
       </div>
@@ -349,6 +350,12 @@
           MenuItems.style.maxHeight = "0px";
         }
       }
+
+      //Use a different function name to avoid conflicts
+      document.getElementById("explore-link").addEventListener("click", function(event){
+        event.preventDefault(); //Prevent default link behavior
+        window.location.href = "/product"; //Navigate to the product page
+      });
     </script>
   </body>
 </html>

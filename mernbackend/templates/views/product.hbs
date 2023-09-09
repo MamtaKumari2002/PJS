@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" initial-scale="1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> --}}
     <title> All Products-PJS</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,19 +41,19 @@
     <div class="small-container">
       <div class="row row-2">
         <h2>All Products</h2>
-        <select >
-          <option > Default Shorting</option>
-          <option > Short by price</option>
-          <option >short by popularity</option>
-          <option >Short By rating</option>
-          <option >Short by sale</option>
+        <select id="sortSelect" >
+          <option value="default" > Default Shorting</option>
+          <option  value="price"> Short by price</option>
+          <option  value="">short by popularity</option>-->
+          <option  value="rating">Short By rating</option>
+          <option value="sale">Short by sale</option> 
 
-          <option ></option>
+          {{!-- <option ></option> --}}
         </select>
       </div>
-      <div class="row">
+      <div class="row" id="productContainer">
         <div class="col-4">
-          <img src="images//balushahi.jpg" />
+          <img src="images//sweet.jpg" />
           <h4>PRABHU JEE SWEETS</h4>
           <div class="rating">
             <i class="fa fa-star" ></i>
@@ -240,6 +240,102 @@
         else{
           MenuItems.style.maxHeight = "0px";
         }
+      }
+   {{!-- /* </script>
+    <script>*/ --}}
+
+      var originalProductItems = Array.from(document.querySelectorAll("col-4"));
+      var sortSelect = document.getElementById("sortSelect");
+      var productContainer = document.getElementById("productContainer");
+
+      sortSelect.addEventListener("change", function(){
+        var selectedValue = sortSelect.value;
+
+        //Convert the NodeList of product items to an array for easier manipulation
+
+      //Clone the original product items array for manipulation
+
+     /* var productItems = originalProductItems.slice();
+
+      switch (selectedValue) {
+        case "price":
+          productItems.sort(sortByPrice);
+          break;
+        default:
+          // Handle default sorting or other cases
+          break;  
+      }
+
+      // Clear the product container
+      productContainer.innerHTML = '';
+
+      // Append the sorted product items back to the container
+      productItems.forEach(item => productContainer.appendChild(item));
+      });
+
+      // Define sorting function
+      function sortByPrice(a, b) {
+        var priceA = parseFloat(a.querySelector("p").textContent.split(" ")[1]);
+        var priceB = parseFloat(b.querySelector("p").textContent.split(" ")[1]);
+        return priceA - priceB; 
+      }
+
+      */
+        var productItems = Array.from(productContainer.getElementsByClassName("col-4"));
+
+        var productGroups = [];
+
+        //Group product items into arrays of size 4
+        for(var i=0; i<productItems.length; i += 4);
+          var group = productItems.slice(i, i+4);
+          productGroups.push(group);
+
+        switch (selectedValue) {
+          case "price":
+            productGroups.forEach(group => group.sort(sortByPrice));
+            break;
+          case "rating":
+            productGroups.forEach(group => group.sort(sortByRating));
+            break;
+          case "sale":
+            productItems.sort(sortBySale);
+            break;
+          default:
+            //Handle default sorting or other cases
+            productContainer.innerHTML = ''; //Clear the product container
+            originalProductItems.forEach(item => productContainer.appendChild(item));
+            break;
+        }
+
+        //clear the product container
+        productContainer.innerHTML = '';
+
+        //Append the sorted product items back to the conatiner
+        productGroups.forEach(group => {
+           for( var i=0;i<group.length;i++){
+          productContainer.appendChild(group[i]);
+        }
+        });
+       
+      });
+
+      // Define sorting function
+      function sortByPrice(a, b){
+        var priceA = parseFloat(a.querySelector("p").textContent.split(" ")[1]);
+        var priceB = parseFloat(b.querySelector("p").textContent.split(" ")[1]);
+        return priceA - priceB;
+      }
+
+      function sortByRating(a, b) {
+        var ratingA = a.querySelector(".rating .fa-star").length;
+        var ratingB = b.querySelector(".rating .fa-star").length;
+        return ratingB - ratingA;
+      }
+
+      function sortBySale(a, b) {
+        var saleA = a.querySelector(".rating .fa-star-half-o").length;
+        var saleB = b.querySelector(".rating .fa-star-half-o").length;
+        return saleB - saleA; 
       }
     </script>
   </body>

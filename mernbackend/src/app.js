@@ -9,6 +9,14 @@ const Login = require("./models/login"); //Import the Login model
 //For contact page
 const Contact = require("./models/contacts");
 
+//for logout
+const session  = require("express-session");
+
+const cors = require('cors');
+//..
+
+
+
 
 const port = process.env.PORT || 3000;
 
@@ -25,6 +33,18 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.static(static_path));
 //Serve static files from the "images" directry
 app.use('/images', express.static(__dirname + '/templates/views/images'));
+
+// ----for logout
+app.use(
+    session({
+        secret: "your-secret-key",
+        resave:true,
+        saveUninitialized: true,
+    })
+);
+
+app.use(cors());
+
 app.set("view engine", "hbs");
 app.set("views", template_path);
 // //myself
@@ -32,13 +52,25 @@ app.set("images", image_path);
 hbs.registerPartials(partials_path);
 
 
+//Middleware to check authentication status
+app.use((req, res, next) => {
+    res.locals.isAuthenticated = req.session.isAuthenticated || false;
+    next();
+});
+
+
+
 app.get("/", (req, res) => {
     res.render("index")
 });
 
 app.get("/account", (req, res) =>{
-    res.render("account");
+    res.render("account", {isAuthenticated: req.session.isAuthenticated});
 });
+
+app.get("/login", (req, res) => {
+    res.render("login", { isAuthenticated: req.setEncoding.isAuthenticated});
+})
 
 //--------for contact page------
 app.get("/contact", (req, res) => {
@@ -118,13 +150,15 @@ app.post("/contact", async(req, res) => {
 
         // console.log(req.body.username);
         // res.send(req.body.username);
-        const { name, email, massage } = req.body;
+        const { name, email,phone, address, massage } = req.body;
 
         //Hash the pasword
         //const hashedPassword = await bcrypt.hash(password,10); // 10 is the salt rounds
         const contactCustomer = new Contact({
             name:name,
             email:email,
+            phone:phone,
+            address:address,
             massage:massage,//Store the hashed password
         });
 
@@ -163,10 +197,12 @@ app.get("/cart", (req, res) => {
     res.render("cart");
 });
 
+
 // //----my contact-page is-----
 // app.get("/contact", (req, res) => {
 //     res.render("contact");
 // });
+
 // ----------login part-------
 app.post("/login", async(req, res) => {
     try{
@@ -179,13 +215,22 @@ app.post("/login", async(req, res) => {
             //Compare hashed password
             const isPasswordValid = await bcrypt.compare(password, user.password);
             if(isPasswordValid){
-                res.status(201).render("index");
+                // res.status(201).render("index");
+                //for logout
+                //Set authentication status in session
+                req.session.isAuthenticated = true;
+                res.redirect("/account");
             } else{
                 res.send("Invalid login details");
             }
         } else {
             res.send("user not found");
         }
+
+        // //Set authentication status in session
+       
+        // //Redirect to account page after successful login
+        // res.redirect("/account");
 
     } catch (error) {
         res.status(400).send("Invalid login details");
@@ -215,6 +260,22 @@ app.post("/login", async(req, res) => {
     //     res.status(400).send("invalid login details");
     // }
 });
+
+//---logout code---
+app.post("/logout", (req, res) => {
+    //Clear authentication status in session
+    req.session.isAuthenticated = false;
+    res.redirect("/account");
+});
+
+// // Handle logout
+// app.get("/logout", (req, res) => {
+//     //Clear authentication status in session
+//     req.session.isAuthenticated = false;
+//     //Redirect to account page after logout
+//     res.redirect("/account");
+// });
+
 
 
 

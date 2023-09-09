@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" initial-scale="1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Products-PJS</title>
+    {{!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> --}}
+    <title>Account-PJS</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -61,7 +61,8 @@
                 <hr id="Indicator" />
               </div>
               {{!-- <form action="/register" method="post" id="LoginForm"> --}}
-            
+            {{!---Render login form if user is not authenticated---}}
+            {{#unless isAuthenticated}}
               <form action="/login" method="post" id="LoginForm">
             
                 <input type="text" name="username" placeholder="Username" />
@@ -69,13 +70,24 @@
                 <button type="submit" class="btn">Login</button>
                 <a href="">Forgot password</a>
               </form>
+              {{/unless}}
 
+              {{!---- Render registration form if user is not authenticated---}}
+              {{#unless isAuthenticated}}
               <form action="/register" method="post" id="RegForm">
                 <input type="text" name="username" placeholder="Username" />
                 <input type="email" name="email" placeholder="Email" />
                 <input type="password" name="password" placeholder="Password" />
                 <button type="submit" class="btn">Register</button>
               </form>
+              {{/unless}}
+             
+              {{#if isAuthenticated}}
+              <form action="/logout" method="post" class="logout-form">
+              <button type="submit" class="btn">Logout</button>
+
+              </form>
+              {{/if}}
             </div>
           </div>
         </div>
@@ -160,12 +172,14 @@
 
       function register() {
         RegForm.style.transform = "translateX(0px)";
-        LoginForm.style.transform = "translateX(0px)";
+       LoginForm.style.transform = "translateX(0px)";
+       //LoginForm.style.transform = "translateX(300px)";
         Indicator.style.transform = "translateX(100px)";
       }
       function login() {
         RegForm.style.transform = "translateX(300px)";
         LoginForm.style.transform = "translateX(300px)";
+        // LoginForm.style.transform = "translateX(0px)";
         Indicator.style.transform = "translateX(0px)";
       }
     </script>

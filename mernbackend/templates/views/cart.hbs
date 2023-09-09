@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" initial-scale="1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Products-PJS</title>
+    {{!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> --}}
+    <title>Cart-PJS</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -201,6 +201,11 @@
             {{!-- <td id="total">&#x20B9 0.00</td> --}}
         </tr>
     </table>
+</div>
+
+<!--This is for proceed-to-payment--->
+<div class="proceed-to-payment">
+  <button id="proceedBtn" onclick="proceedToPayment()"></button>
 </div>
 
 </div>
@@ -414,6 +419,46 @@ console.log(priceText, price); // Add this line for debugging
 
       //Initial update when the page loads
       updateCart();
+
+      //Create the "Proceed to Payment" button
+      const proceedButton = document.createElement("button");
+      proceedButton.textContent = "Proceed to Payment";
+      proceedButton.addEventListener("click", proceedToPayment);
+
+      // Append the button to the "proceed-to-payment" div
+      const proceedDiv = document.querySelector(".proceed-to-payment");
+      proceedDiv.appendChild(proceedButton);
+
+    function proceedToPayment(){
+      //Get the total and subtotal values
+      const subtotal = parseFloat(subtotalElement.innerText);
+      const total = parseFloat(totalElement.innerText);
+
+      // Replace this with your actual payment gateway URL
+      const paymentGatewayURL = "https://your-payment-gateway-url.com"; // Replace with your payment gateway URL
+
+      //Create a form to send the data to the payment gateway
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = paymentGatewayURL;
+
+      // Add hidden input fields for subtotal and total
+      const subtotalInput = document.createElement("input");
+      subtotalInput.type = "hidden";
+      subtotalInput.name = "subtotal";
+      subtotalInput.value = subtotal;
+      form.appendChild(subtotalInput);
+
+      const totalInput = document.createElement("input");
+      totalInput.type = "hidden";
+      totalInput.name = "total";
+      totalInput.value = total;
+      form.appendChild(totalInput);
+
+      //Append the form to the document and submit it
+      document.body.appendChild(form);
+      form.submit();
+    }
 
        
     </script>
